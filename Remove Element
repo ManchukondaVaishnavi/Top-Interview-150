@@ -1,0 +1,17 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int sol[]=new int[nums.length];
+        int i=0,j=sol.length-1;
+        for(int k=0;k<nums.length;k++){
+            if(nums[k]!=val){
+                sol[i++]=nums[k];
+            }else{
+                sol[j--]=nums[k];
+            }
+        }
+        for(int p=0;p<nums.length;p++){
+            nums[p]=sol[p];
+        }
+        return i;
+    }
+}
