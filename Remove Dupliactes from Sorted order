@@ -1,0 +1,21 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int sol[]=new int[nums.length];
+        int j=1;
+        int k=nums.length-1;
+        sol[0]=nums[0];
+    for(int i=1;i<nums.length;i++){
+        if(sol[j-1]!=nums[i]){
+            sol[j++]=nums[i];
+           
+        }
+        else{
+            sol[k--]=nums[i];
+        }
+        }
+        for(int p=0;p<nums.length;p++){
+            nums[p]=sol[p];
+        }
+        return j;
+    }
+}
