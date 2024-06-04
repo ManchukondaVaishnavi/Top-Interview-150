@@ -1,0 +1,27 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+       if(x<0){
+        return false;
+       } 
+       else if(x==0){
+        return true;
+       }
+       else{
+        String n=Integer.toString(x);
+        String rev="";
+        while(x>0){
+            int y=x%10;
+            rev+=Integer.toString(y);
+            x=x/10;
+
+        }
+        
+        if(rev.equals(n)){
+            return true;
+        }else{
+            return false;
+        }
+
+       }
+    }
+}
