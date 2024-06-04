@@ -1,0 +1,23 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length==1){
+            return 1;
+        }
+       int sol[]=new int[nums.length];
+       sol[0]=nums[0];
+       sol[1]=nums[1];
+       int j=2,k=nums.length-1;
+       for(int i=2;i<nums.length;i++){
+        if(nums[i]!=sol[j-1]||nums[i]!=sol[j-2]){
+            sol[j++]=nums[i];
+        }
+        else{
+           sol[k--]=nums[i];
+            }
+        }
+        for(int p=0;p<nums.length;p++){
+            nums[p]=sol[p];
+        }
+       return j;
+    }
+}
